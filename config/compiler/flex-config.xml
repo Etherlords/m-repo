@@ -1,0 +1,69 @@
+<flex-config>
+    <compiler>
+        <keep-as3-metadata append="true">
+            <name>Inject</name>
+            <name>Init</name>
+            <name>Destroy</name>
+            <name>Observe</name>
+            <name>MessageDispatcher</name>
+            <name>MessageHandler</name>
+            <name>CommandResult</name>
+            <name>CommandComplete</name>
+            <name>CommandError</name>
+            <name>Publish</name>
+            <name>Subscribe</name>
+            <name>PublishSubscribe</name>
+		</keep-as3-metadata>
+
+	</compiler>
+
+
+
+    <include-classes>
+        <class>mx.binding.ArrayElementWatcher</class>
+        <class>mx.binding.BindabilityInfo</class>
+        <class>mx.binding.EvalBindingResponder</class>
+        <class>mx.binding.FunctionReturnWatcher</class>
+        <class>mx.binding.IBindingClient</class>
+        <class>mx.binding.IWatcherSetupUtil</class>
+        <class>mx.binding.PropertyWatcher</class>
+        <class>mx.binding.RepeatableBinding</class>
+        <class>mx.binding.RepeaterComponentWatcher</class>
+        <class>mx.binding.RepeaterItemWatcher</class>
+        <class>mx.binding.StaticPropertyWatcher</class>
+        <class>mx.binding.XMLWatcher</class>
+        <class>mx.binding.utils.BindingUtils</class>
+    </include-classes>
+                    <!--
+    <compiler xmlns="http://www.adobe.com/2006/flex-config">
+        <debug>true</debug>
+        <source-path append="true">
+            <path-element>C:/DES/projects/murclub/murclub2/app/src/main</path-element>
+        </source-path>
+        <external-library-path>
+            <path-element>flexsdk/frameworks/libs/player/10.2/playerglobal.swc</path-element>
+        </external-library-path>
+        <library-path append="true">
+            <path-element>C:/DES/projects/murclub/murclub2/libs/parsley-core-3.0.0.swc</path-element>
+            <path-element>C:/DES/projects/murclub/murclub2/libs/parsley-flex-3.0.0.swc</path-element>
+            <path-element>C:/DES/projects/murclub/murclub2/libs/parsley-xml-3.0.0.swc</path-element>
+            <path-element>C:/DES/projects/murclub/murclub2/libs/spicelib-commands-3.1.1.swc</path-element>
+            <path-element>C:/DES/projects/murclub/murclub2/libs/spicelib-reflect-3.0.0.swc</path-element>
+            <path-element>C:/DES/projects/murclub/murclub2/libs/spicelib-util-3.1.0.swc</path-element>
+            <path-element>C:/DES/projects/murclub/murclub2/libs/spicelib-xml-mapper-3.0.2.swc</path-element>
+        </library-path>
+    </compiler>
+    <file-specs xmlns="http://www.adobe.com/2006/flex-config">
+        <path-element>C:/DES/projects/murclub/murclub2/app/src/main/ru/murclub/app/Murclub.as</path-element>
+    </file-specs>
+
+    <default-background-color>0x99FFFF</default-background-color>
+    <default-frame-rate>30</default-frame-rate>
+    <default-size>
+        <width>800</width>
+        <height>600</height>
+    </default-size>
+    <swf-version>11</swf-version>
+    <target-player>11.1.0</target-player>
+            -->
+</flex-config>
