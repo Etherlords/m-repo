@@ -20,9 +20,11 @@ public class Murclub extends Sprite {
 
     public function Murclub() {
         new ContextBuilderHelper().build(this);
-        controller.startup();
+
         var modelView:ModelView = context.getObjectByType(ModelView) as ModelView;
         addChild(modelView);
+
+        controller.startup();
     }
 }
 }
@@ -31,13 +33,15 @@ import org.spicefactory.parsley.context.ContextBuilder;
 import org.spicefactory.parsley.flex.FlexConfig;
 
 import ru.murclub.app.config.appConfig;
+import ru.murclub.component.pm.config.pmConfig;
 import ru.murclub.component.view.config.viewConfig;
 
 class ContextBuilderHelper {
     public function build(root:Object):void {
         ContextBuilder.newBuilder()
-                .config(FlexConfig.forClass(appConfig))
+                .config(FlexConfig.forClass(pmConfig))
                 .config(FlexConfig.forClass(viewConfig))
+                .config(FlexConfig.forClass(appConfig))
                 .object(root)
                 .build();
     }

@@ -5,15 +5,19 @@
     <fx:Script>
         <![CDATA[
         import ru.murclub.component.pm.PMConstaints;
-        import ru.murclub.component.view.model.ModelView;
+        import ru.murclub.component.pm.model.ModelPM;
         ]]>
     </fx:Script>
 
     <fx:Declarations>
-        <Object type="{ModelView}">
-            <Subscribe property="userName" objectId="{PMConstaints.PUBLISH_PROPERTY_NAME}"/>
+        <Object type="{ModelPM}">
+            <Publish property="name" changeEvent="{PMConstaints.EVENT_TYPE_CHANGE_NAME}" objectId="{PMConstaints.PUBLISH_PROPERTY_NAME}"/>
         </Object>
+
+
 
     </fx:Declarations>
 
 </Objects>
+
+
