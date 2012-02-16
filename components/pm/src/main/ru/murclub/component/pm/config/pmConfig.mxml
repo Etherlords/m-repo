@@ -6,14 +6,15 @@
         <![CDATA[
         import ru.murclub.component.pm.PMConstaints;
         import ru.murclub.component.pm.model.ModelPM;
+        import ru.murclub.component.pm.model.ModelStorePM;
         ]]>
     </fx:Script>
 
     <fx:Declarations>
-        <Object type="{ModelPM}">
+        <DynamicObject type="{ModelPM}">
             <Publish property="name" changeEvent="{PMConstaints.EVENT_TYPE_CHANGE_NAME}" objectId="{PMConstaints.PUBLISH_PROPERTY_NAME}"/>
-        </Object>
-
+        </DynamicObject>
+        <Object type="{ModelStorePM}"/>
 
 
     </fx:Declarations>
