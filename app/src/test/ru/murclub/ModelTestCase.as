@@ -33,11 +33,24 @@ public class ModelTestCase {
     }
 
     [Test]
-    public function test():void {
+    public function testAddModel():void {
         var model:Model = new Model();
-        dispatcher(MessageFactory.newCreateModelMsg(model));
+        model.id = 1;
+        modelStorePM.addModel(model);
         assertThat(modelStorePM.hasModel(model.id));
+    }
+    
+    [Test]
+    public function testAddModelInRoom():void {
+        var model:Model = new Model();
+        model.id = 1;
+        modelStorePM.addModel(model);
+        dispatcher(MessageFactory.newAddModelToRoomMsg(id));
     }
 
 }
+}
+
+class MockPersModelRender {
+
 }

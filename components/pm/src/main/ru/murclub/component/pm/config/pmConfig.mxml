@@ -7,6 +7,7 @@
         import ru.murclub.component.pm.PMConstaints;
         import ru.murclub.component.pm.model.ModelPM;
         import ru.murclub.component.pm.model.ModelStorePM;
+        import ru.murclub.component.pm.room.RoomPM;
         ]]>
     </fx:Script>
 
@@ -15,7 +16,7 @@
             <Publish property="name" changeEvent="{PMConstaints.EVENT_TYPE_CHANGE_NAME}" objectId="{PMConstaints.PUBLISH_PROPERTY_NAME}"/>
         </DynamicObject>
         <Object type="{ModelStorePM}"/>
-
+        <Object type="{RoomPM}"/>
 
     </fx:Declarations>
 

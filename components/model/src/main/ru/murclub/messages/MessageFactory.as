@@ -9,7 +9,7 @@ public class MessageFactory {
     public function MessageFactory() {
     }
 
-    public static function newCreateModelMsg(model:Model):AddModelMessage {
+    public static function newAddModelMsg(model:Model):AddModelMessage {
         var msg:AddModelMessage = new AddModelMessage();
         msg.model = model;
         return msg;
