@@ -4,16 +4,21 @@
  */
 package ru.murclub {
 import org.flexunit.asserts.assertTrue;
+import org.flexunit.asserts.fail;
 import org.hamcrest.assertThat;
 import org.spicefactory.parsley.context.ContextBuilder;
+import org.spicefactory.parsley.core.context.Context;
 import org.spicefactory.parsley.flex.FlexConfig;
 
 import ru.murclub.component.pm.config.pmConfig;
+import ru.murclub.component.pm.model.ModelPM;
 
 import ru.murclub.component.pm.model.ModelStorePM;
 import ru.murclub.component.pm.room.RoomPM;
 import ru.murclub.controller.config.controllerConfig;
 import ru.murclub.messages.MessageFactory;
+import ru.murclub.mock.MockRoomPersRender;
+import ru.murclub.mock.mockRoomPersRenderConfig;
 import ru.murclub.service.render.IRoomPersModelRender;
 import ru.murclub.service.render.IRoomRenderService;
 import ru.murclub.vo.model.Model;
@@ -33,13 +38,11 @@ public class RoomTestCase implements IRoomRenderService {
     [Before]
     public function setUp():void {
 
-        mockPersRender = new MockRoomPersRender();
-
         ContextBuilder.newBuilder()
+                .config(FlexConfig.forClass(mockRoomPersRenderConfig))
                 .config(FlexConfig.forClass(pmConfig))
                 .config(FlexConfig.forClass(controllerConfig))
                 .object(this)
-                .object(mockPersRender)
                 .build();
     }
 
@@ -50,23 +53,16 @@ public class RoomTestCase implements IRoomRenderService {
         modelStorePM.addModel(model);
         dispatcher(MessageFactory.newAddModelToRoomMsg(model.id));
         assertTrue(roomPM.userModelContextMap.hasKey(model.id));
-        assertTrue(mockPersRender.wasInited);
+        var modelPM:ModelPM = (roomPM.userModelContextMap.itemFor(model.id) as Context).getObjectByType(ModelPM) as ModelPM;
+        assertTrue(MockRoomPersRender(modelPM.modelRender).wasInited);
+        assertThat(modelPM.model, model);
     }
 
-    public function newEmptyRender():IRoomPersModelRender {
-        return new MockRoomPersRender();
+    [MessageError]
+    public function handleError (error:Error) : void {
+        fail(error.message);
     }
+
+
 }
-}
-
-import ru.murclub.service.render.IRoomPersModelRender;
-
-class MockRoomPersRender implements IRoomPersModelRender {
-
-    public var wasInited:Boolean;
-
-    [Init]
-    public function init():void {
-        wasInited = true;
-    }
 }
