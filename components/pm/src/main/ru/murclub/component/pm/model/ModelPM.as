@@ -10,8 +10,11 @@ import flash.events.Event;
 import flash.events.EventDispatcher;
 
 import ru.murclub.component.pm.PMConstaints;
+import ru.murclub.vo.model.Model;
 
 public class ModelPM extends EventDispatcher {
+
+    public var model:Model;
 
     private var _name:String;
 

@@ -14,5 +14,11 @@ public class MessageFactory {
         msg.model = model;
         return msg;
     }
+
+    public static function newAddModelToRoomMsg(id:Number):AddModelToRoomMessage {
+       var msg:AddModelToRoomMessage = new AddModelToRoomMessage();
+        msg.id = id;
+        return msg;
+    }
 }
 }

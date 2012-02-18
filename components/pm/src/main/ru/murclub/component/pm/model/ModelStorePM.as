@@ -24,5 +24,9 @@ public class ModelStorePM {
     public function addModel(model:Model):void {
         container.add(model.id, model);
     }
+
+    public function getModel(id:Number):Model {
+        return container.itemFor(id);
+    }
 }
 }
