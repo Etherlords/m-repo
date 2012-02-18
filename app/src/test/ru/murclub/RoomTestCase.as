@@ -14,9 +14,11 @@ import ru.murclub.component.pm.model.ModelStorePM;
 import ru.murclub.component.pm.room.RoomPM;
 import ru.murclub.controller.config.controllerConfig;
 import ru.murclub.messages.MessageFactory;
+import ru.murclub.service.render.IRoomPersModelRender;
+import ru.murclub.service.render.IRoomRenderService;
 import ru.murclub.vo.model.Model;
 
-public class RoomTestCase {
+public class RoomTestCase implements IRoomRenderService {
     [MessageDispatcher]
     public var dispatcher:Function;
 
@@ -26,12 +28,18 @@ public class RoomTestCase {
     [Inject]
     public var roomPM:RoomPM;
 
+    public var mockPersRender:MockRoomPersRender;
+
     [Before]
     public function setUp():void {
+
+        mockPersRender = new MockRoomPersRender();
+
         ContextBuilder.newBuilder()
                 .config(FlexConfig.forClass(pmConfig))
                 .config(FlexConfig.forClass(controllerConfig))
                 .object(this)
+                .object(mockPersRender)
                 .build();
     }
 
@@ -41,7 +49,24 @@ public class RoomTestCase {
         model.id = 1;
         modelStorePM.addModel(model);
         dispatcher(MessageFactory.newAddModelToRoomMsg(model.id));
-        assertTrue(roomPM.userModelContextMap.hasKey(model.id))
+        assertTrue(roomPM.userModelContextMap.hasKey(model.id));
+        assertTrue(mockPersRender.wasInited);
+    }
+
+    public function newEmptyRender():IRoomPersModelRender {
+        return new MockRoomPersRender();
     }
 }
+}
+
+import ru.murclub.service.render.IRoomPersModelRender;
+
+class MockRoomPersRender implements IRoomPersModelRender {
+
+    public var wasInited:Boolean;
+
+    [Init]
+    public function init():void {
+        wasInited = true;
+    }
 }

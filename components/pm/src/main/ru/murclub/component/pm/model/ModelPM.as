@@ -10,17 +10,25 @@ import flash.events.Event;
 import flash.events.EventDispatcher;
 
 import ru.murclub.component.pm.PMConstaints;
+import ru.murclub.service.render.IPersModelRender;
 import ru.murclub.vo.model.Model;
 
 public class ModelPM extends EventDispatcher {
 
     public var model:Model;
 
+    [Inject]
+    public var modelRender:IPersModelRender;
+
     private var _name:String;
 
     public function ModelPM() {
     }
 
+    [Init]
+    public function init():void {
+
+    }
 
     public function get name():String {
         return _name;

@@ -27,16 +27,8 @@ public class RoomPM {
         userModelContextMap = new Map();
     }
 
-    public function registerUserModel(id:Number):void {
-        var model:Model = modelStorePM.getModel(id);
-        var modelContext:Context = ContextBuilder.newSetup()
-                                        .parent(context)
-                                            .description("Context for model with id:" + model.id)
-                                            .newBuilder()
-                                                .object(model)
-                                                .config(FlexConfig.forClass(userRoomConfig))
-                                                .build();
-        userModelContextMap.add(model.id, modelContext);
+    public function registerUserModel(id:Number, modelContext):void {
+        userModelContextMap.add(id, modelContext);
     }
 }
 }
