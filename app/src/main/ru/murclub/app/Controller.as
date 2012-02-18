@@ -15,7 +15,7 @@ public class Controller {
     }
 
     public function startup():void {
-        var model:Model = new ru.murclub.vo.model.Model();
+        var model:Model = new Model();
         model.id = 123;
         model.name = "model name";
 

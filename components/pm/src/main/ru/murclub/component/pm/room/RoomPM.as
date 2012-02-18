@@ -8,7 +8,7 @@ import org.spicefactory.parsley.context.ContextBuilder;
 import org.spicefactory.parsley.core.context.Context;
 import org.spicefactory.parsley.flex.FlexConfig;
 
-import ru.murclub.component.pm.config.userRoomConfig;
+import ru.murclub.component.pm.config.userRoomPMConfig;
 import ru.murclub.component.pm.model.ModelStorePM;
 
 import ru.murclub.vo.model.Model;

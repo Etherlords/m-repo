@@ -9,7 +9,7 @@ import org.spicefactory.parsley.flex.FlexConfig;
 
 import ru.murclub.component.pm.PMConstaints;
 
-import ru.murclub.component.pm.config.userRoomConfig;
+import ru.murclub.component.pm.config.userRoomPMConfig;
 
 import ru.murclub.component.pm.model.ModelStorePM;
 import ru.murclub.component.pm.room.RoomPM;
@@ -42,7 +42,7 @@ public class AddUserToRoomCommand {
                 .description("Context for model with id:" + model.id)
                 .newBuilder()
                 .object(model)
-                .config(FlexConfig.forClass(userRoomConfig))
+                .config(FlexConfig.forClass(userRoomPMConfig))
                 .build();
         roomPM.registerUserModel(msg.id, modelContext);
     }
