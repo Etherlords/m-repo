@@ -4,16 +4,24 @@
 
     <fx:Script>
         <![CDATA[
+        import avmplus.constantXml;
+
         import ru.murclub.component.pm.PMConstaints;
-        import ru.murclub.component.view.model.ModelView;
+        import ru.murclub.component.view.ViewConstants;
+        import ru.murclub.component.view.model.PersModelRoomRender;
+        import ru.murclub.component.view.model.PersModelRoomRender;
+        import ru.murclub.component.view.model.PersModelRoomRender;
+        import ru.murclub.component.view.room.RoomRenderService;
+        import ru.murclub.component.view.room.RoomRenderService;
         ]]>
     </fx:Script>
 
     <fx:Declarations>
-        <Object type="{ModelView}">
-            <Subscribe property="userName" objectId="{PMConstaints.PUBLISH_PROPERTY_NAME}"/>
+        <Object type="{RoomRenderService}" id="VIEW_ROOM_ID">
+            <Property name="viewRoot" idRef="{ViewConstants.VIEW_ROOT_ID}" />
         </Object>
-
     </fx:Declarations>
+
+
 
 </Objects>

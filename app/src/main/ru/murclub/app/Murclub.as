@@ -5,7 +5,8 @@ import flash.text.TextField;
 
 import org.spicefactory.parsley.core.context.Context;
 
-import ru.murclub.component.view.model.ModelView;
+import ru.murclub.component.view.model.PersModelRoomRender;
+import ru.murclub.vo.model.Model;
 
 public class Murclub extends Sprite {
 
@@ -13,36 +14,37 @@ public class Murclub extends Sprite {
     public var controller:Controller;
 
     [Inject]
-    public var model:Model;
-
-    [Inject]
     public var context:Context;
+
+
 
     public function Murclub() {
         new ContextBuilderHelper().build(this);
-
-        var modelView:ModelView = context.getObjectByType(ModelView) as ModelView;
-        addChild(modelView);
-
-        controller.startup();
     }
 }
 }
+
+import flash.display.DisplayObject;
 
 import org.spicefactory.parsley.context.ContextBuilder;
 import org.spicefactory.parsley.flex.FlexConfig;
 
 import ru.murclub.app.config.appConfig;
 import ru.murclub.component.pm.config.pmConfig;
+import ru.murclub.component.view.ViewConstants;
 import ru.murclub.component.view.config.viewConfig;
+import ru.murclub.controller.config.controllerConfig;
 
 class ContextBuilderHelper {
-    public function build(root:Object):void {
-        ContextBuilder.newBuilder()
+    public function build(root:DisplayObject):void {
+        ContextBuilder.newSetup()
+                .viewRoot(root)
+                .newBuilder()
                 .config(FlexConfig.forClass(pmConfig))
                 .config(FlexConfig.forClass(viewConfig))
                 .config(FlexConfig.forClass(appConfig))
-                .object(root)
+                .config(FlexConfig.forClass(controllerConfig))
+                .object(root, ViewConstants.VIEW_ROOT_ID)
                 .build();
     }
 }

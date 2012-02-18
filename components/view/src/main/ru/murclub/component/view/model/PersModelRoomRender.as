@@ -9,8 +9,9 @@ import flash.display.Sprite;
 import flash.text.TextField;
 
 import ru.murclub.component.pm.model.ModelPM;
+import ru.murclub.service.render.IPersModelRender;
 
-public class ModelView extends Sprite {
+public class PersModelRoomRender extends Sprite implements IPersModelRender {
 
     [Inject]
     public var modelPM:ModelPM;
@@ -19,7 +20,7 @@ public class ModelView extends Sprite {
 
     private var _textField:TextField = new TextField();
 
-    public function ModelView() {
+    public function PersModelRoomRender() {
 
         _textField.text = "model";
         addChild(_textField);

@@ -5,7 +5,7 @@
     <fx:Script>
         <![CDATA[
         import ru.murclub.component.pm.PMConstaints;
-        import ru.murclub.component.view.model.ModelView;
+        import ru.murclub.component.view.model.PersModelRoomRender;
         ]]>
     </fx:Script>
 
