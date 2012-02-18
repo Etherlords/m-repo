@@ -6,8 +6,11 @@
  * To change this template use File | Settings | File Templates.
  */
 package ru.murclub.component.pm.model {
+import flash.errors.IllegalOperationError;
 import flash.events.Event;
 import flash.events.EventDispatcher;
+
+import org.spicefactory.parsley.core.context.Context;
 
 import ru.murclub.component.pm.PMConstaints;
 import ru.murclub.service.render.IPersModelRender;
@@ -15,7 +18,11 @@ import ru.murclub.vo.model.Model;
 
 public class ModelPM extends EventDispatcher {
 
+    [Inject]
     public var model:Model;
+
+    [Inject]
+    public var context:Context;
 
     [Inject]
     public var modelRender:IPersModelRender;
@@ -27,7 +34,9 @@ public class ModelPM extends EventDispatcher {
 
     [Init]
     public function init():void {
-
+        if (!model) {
+            throw new IllegalOperationError("model must be defined");
+        }
     }
 
     public function get name():String {

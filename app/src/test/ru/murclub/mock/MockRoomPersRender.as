@@ -13,11 +13,20 @@ public class MockRoomPersRender implements IPersModelRender {
 
     public var wasInited:Boolean = false;
 
-    public var userName:String;
+    private var _userName:String;
     
     [Init]
     public function init():void {
         wasInited = true;
+        _userName = modelPM.name;
+    }
+
+    public function get userName():String {
+        return _userName;
+    }
+
+    public function set userName(value:String):void {
+        _userName = value;
     }
 }
 }

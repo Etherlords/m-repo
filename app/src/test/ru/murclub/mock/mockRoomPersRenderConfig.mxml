@@ -11,7 +11,7 @@
 
     <fx:Declarations>
         <DynamicObject type="{MockRoomPersRender}">
-            <Subscribe property="userName" objectId="{PMConstaints.PUBLISH_PROPERTY_NAME}"/>
+            <Subscribe property="userName" scope="{PMConstaints.SCOPE_NAME_PERS_MODEL}" objectId="{PMConstaints.PUBLISH_PROPERTY_NAME}"/>
         </DynamicObject>
     </fx:Declarations>
 </Objects>

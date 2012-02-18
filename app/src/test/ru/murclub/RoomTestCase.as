@@ -45,7 +45,6 @@ public class RoomTestCase implements IRoomRenderService {
     public function setUp():void {
 
         ContextBuilder.newSetup().scope(PMConstaints.SCOPE_NAME_ROOM).newBuilder()
-
                 .config(FlexConfig.forClass(mockRoomPersRenderConfig))
                 .config(FlexConfig.forClass(pmConfig))
                 .config(FlexConfig.forClass(roomPMConfig))
@@ -66,6 +65,7 @@ public class RoomTestCase implements IRoomRenderService {
         var modelPM:ModelPM = (roomPM.userModelContextMap.itemFor(model.id) as Context).getObjectByType(ModelPM) as ModelPM;
         assertTrue(MockRoomPersRender(modelPM.modelRender).wasInited);
         assertThat(modelPM.model, model);
+        modelPM.name = "newname";
         assertThat(MockRoomPersRender(modelPM.modelRender).userName, equalTo(model.name));
     }
 
