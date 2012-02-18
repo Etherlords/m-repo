@@ -30,7 +30,7 @@ public class PersModelRoomRender extends Sprite implements IPersModelRoomRender 
 
     [Init]
     public function init():void {
-
+        userName = modelPM.name;
     }
 
     public function get userName():String {
