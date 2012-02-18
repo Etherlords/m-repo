@@ -13,7 +13,6 @@
 
     <fx:Declarations>
         <Object type="{ModelStorePM}"/>
-        <Object type="{RoomPM}"/>
 
     </fx:Declarations>
 

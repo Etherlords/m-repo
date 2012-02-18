@@ -10,11 +10,13 @@ import flash.text.TextField;
 
 import ru.murclub.component.pm.model.ModelPM;
 import ru.murclub.service.render.IPersModelRender;
+import ru.murclub.service.render.IPersModelRoomRender;
 
-public class PersModelRoomRender extends Sprite implements IPersModelRender {
+public class PersModelRoomRender extends Sprite implements IPersModelRoomRender {
 
     [Inject]
     public var modelPM:ModelPM;
+
 
     private var _userName:String;
 
@@ -24,6 +26,11 @@ public class PersModelRoomRender extends Sprite implements IPersModelRender {
 
         _textField.text = "model";
         addChild(_textField);
+    }
+
+    [Init]
+    public function init():void {
+
     }
 
     public function get userName():String {

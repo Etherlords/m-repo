@@ -7,6 +7,8 @@ import org.spicefactory.parsley.context.ContextBuilder;
 import org.spicefactory.parsley.core.context.Context;
 import org.spicefactory.parsley.flex.FlexConfig;
 
+import ru.murclub.component.pm.PMConstaints;
+
 import ru.murclub.component.pm.config.userRoomConfig;
 
 import ru.murclub.component.pm.model.ModelStorePM;
@@ -36,6 +38,7 @@ public class AddUserToRoomCommand {
         var model:Model = modelStorePM.getModel(msg.id);
         var modelContext:Context = ContextBuilder.newSetup()
                 .parent(context)
+                .scope(PMConstaints.SCOPE_NAME_PERS_MODEL)
                 .description("Context for model with id:" + model.id)
                 .newBuilder()
                 .object(model)

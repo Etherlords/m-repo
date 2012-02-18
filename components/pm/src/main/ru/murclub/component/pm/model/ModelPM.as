@@ -31,11 +31,11 @@ public class ModelPM extends EventDispatcher {
     }
 
     public function get name():String {
-        return _name;
+        return model.name;
     }
 
     public function set name(value:String):void {
-        _name = value;
+        model.name = value;
         dispatchEvent(new Event(PMConstaints.EVENT_TYPE_CHANGE_NAME));
     }
 }

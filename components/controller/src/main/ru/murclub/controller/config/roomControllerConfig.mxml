@@ -10,6 +10,6 @@
         import ru.murclub.messages.AddModelToRoomMessage;
         ]]></fx:Script>
     <fx:Declarations>
-        <MapCommand type="{AddUserModelCommand}" messageType="{AddModelMessage}"/>
+        <MapCommand type="{AddUserToRoomCommand}" messageType="{AddModelToRoomMessage}"/>
     </fx:Declarations>
 </Objects>

@@ -5,13 +5,11 @@
     <fx:Script>
         <![CDATA[
         import ru.murclub.app.Controller;
-        import ru.murclub.app.Model;
         ]]>
     </fx:Script>
 
     <fx:Declarations>
         <Object type="{Controller}"/>
-        <Object type="{Model}"/>
     </fx:Declarations>
 
 </Objects>

@@ -6,6 +6,7 @@ package ru.murclub.vo.model {
 public class Model {
 
     public var id:Number;
+    public var name:String;
 
     public function Model() {
     }

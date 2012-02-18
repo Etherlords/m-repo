@@ -4,6 +4,7 @@
 
     <fx:Script>
         <![CDATA[
+        import ru.murclub.component.pm.PMConstaints;
         import ru.murclub.component.pm.model.ModelPM;
         import ru.murclub.component.pm.model.ModelStorePM;
         import ru.murclub.component.pm.room.RoomPM;
@@ -11,7 +12,9 @@
     </fx:Script>
 
     <fx:Declarations>
-        <Object type="{ModelPM}"/>
+        <Object type="{ModelPM}">
+            <Publish scope="{PMConstaints.SCOPE_NAME_PERS_MODEL}" objectId="{PMConstaints.PUBLISH_PROPERTY_NAME}" property="name"/>
+        </Object>
     </fx:Declarations>
 
 </Objects>

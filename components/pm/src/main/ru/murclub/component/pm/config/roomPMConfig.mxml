@@ -5,13 +5,14 @@
     <fx:Script>
         <![CDATA[
         import ru.murclub.component.pm.PMConstaints;
-        import ru.murclub.component.view.model.PersModelRoomRender;
+        import ru.murclub.component.pm.model.ModelPM;
+        import ru.murclub.component.pm.model.ModelStorePM;
+        import ru.murclub.component.pm.room.RoomPM;
         ]]>
     </fx:Script>
 
     <fx:Declarations>
-        <DynamicObject type="{MockRoomPersRender}">
-            <Subscribe property="userName" objectId="{PMConstaints.PUBLISH_PROPERTY_NAME}"/>
-        </DynamicObject>
+        <Object type="{RoomPM}"/>
     </fx:Declarations>
+
 </Objects>
