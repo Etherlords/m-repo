@@ -9,7 +9,16 @@ import flash.text.TextField;
 
 import mx.controls.Text;
 
+import org.spicefactory.parsley.context.ContextBuilder;
+
 import org.spicefactory.parsley.core.context.Context;
+import org.spicefactory.parsley.flex.FlexConfig;
+
+import ru.murclub.component.pm.PMConstaints;
+
+import ru.murclub.component.pm.model.ModelPM;
+import ru.murclub.component.view.config.PersRoomViewConfig;
+import ru.murclub.component.view.config.roomViewConfig;
 
 import ru.murclub.component.view.model.PersModelRoomRender;
 
@@ -26,10 +35,15 @@ public class RoomRenderService extends Sprite implements IRoomRenderService {
 
     private var _textField:TextField;
 
+    private var _modelHolder:Sprite;
+
     public function RoomRenderService() {
         _textField = new TextField();
         _textField.text = "room view render";
         addChild(_textField);
+        _modelHolder = new Sprite();
+        addChild(_modelHolder);
+        _modelHolder.y = 20;
     }
 
     [Init]
@@ -38,8 +52,15 @@ public class RoomRenderService extends Sprite implements IRoomRenderService {
     }
 
 
-    public function register(persRender:PersModelRoomRender):void {
-        this.addChild(persRender as DisplayObject)
+    public function register(modelPM:ModelPM):void {
+        var renderContext:Context = ContextBuilder.newSetup()
+                .parent(modelPM.context)
+                .viewRoot(this)
+                .newBuilder()
+                    .config(FlexConfig.forClass(PersRoomViewConfig))
+                    .build();
+        var render:PersModelRoomRender = renderContext.getObjectByType(PersModelRoomRender) as PersModelRoomRender;
+        _modelHolder.addChild(render)
     }
 
 }

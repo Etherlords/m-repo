@@ -13,7 +13,6 @@ import flash.events.EventDispatcher;
 import org.spicefactory.parsley.core.context.Context;
 
 import ru.murclub.component.pm.PMConstaints;
-import ru.murclub.service.render.IPersModelRender;
 import ru.murclub.vo.model.Model;
 
 public class ModelPM extends EventDispatcher {
@@ -23,11 +22,6 @@ public class ModelPM extends EventDispatcher {
 
     [Inject]
     public var context:Context;
-
-    [Inject]
-    public var modelRender:IPersModelRender;
-
-    private var _name:String;
 
     public function ModelPM() {
     }

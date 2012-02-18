@@ -4,33 +4,21 @@
 
     <fx:Script>
         <![CDATA[
-        import avmplus.constantXml;
-
         import org.spicefactory.parsley.core.processor.InitPhase;
-
-        import org.spicefactory.parsley.core.processor.Phase;
 
         import ru.murclub.component.pm.PMConstaints;
         import ru.murclub.component.view.ViewConstants;
         import ru.murclub.component.view.model.PersModelRoomRender;
-        import ru.murclub.component.view.model.PersModelRoomRender;
-        import ru.murclub.component.view.model.PersModelRoomRender;
-        import ru.murclub.component.view.room.RoomRenderService;
         import ru.murclub.component.view.room.RoomRenderService;
         ]]>
     </fx:Script>
 
     <fx:Declarations>
-        <DynamicObject type="{PersModelRoomRender}">
-            <Subscribe property="userName" scope="{PMConstaints.SCOPE_NAME_PERS_MODEL}" objectId="{PMConstaints.PUBLISH_PROPERTY_NAME}"/>
-        </DynamicObject>
-
         <Object type="{RoomRenderService}" id="VIEW_ROOM_ID">
-            <Property name="viewRoot" idRef="{ViewConstants.VIEW_ROOT_ID}" />
-            <Observe phase="{InitPhase.postInit()}" scope="{PMConstaints.SCOPE_NAME_ROOM}" method="register" />
+            <Property name="viewRoot" idRef="{ViewConstants.VIEW_ROOT_ID}"/>
+            <Observe phase="{InitPhase.postInit()}" scope="{PMConstaints.SCOPE_NAME_ROOM}" method="register"/>
         </Object>
     </fx:Declarations>
-
 
 
 </Objects>
