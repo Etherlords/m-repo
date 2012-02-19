@@ -16,7 +16,7 @@ public class PersAlignTest {
     public function testAlignTors():void {
         var persRender:PersModelRender = new PersModelRender();
         persRender.modelPM = new ModelPM();
-        persRender.modelPM.model = EntityFactory.newEmptyMaleModel(1);
+        persRender.modelPM.model = EntityFactory.newEmptyMaleModel(1, 1);
         persRender.init();
         assertThat(Math.round(persRender.headRender.x), equalTo(Math.round(persRender.torsoRender.width/2 - persRender.headRender.width/2)));
         assertThat(persRender.headRender.y, equalTo(-persRender.headRender.height));
