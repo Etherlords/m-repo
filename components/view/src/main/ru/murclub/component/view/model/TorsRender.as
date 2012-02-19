@@ -22,14 +22,9 @@ public class TorsRender extends Sprite {
         } else {
             attachedTorso = new bodyW();
             attachedTorso.gotoAndStop(0);
-            //bodyShade = new womenBodyShade();
         }
 
         addChild(attachedTorso);
-
-        if (bodyShade != null) {
-            addChild(bodyShade);
-        }
     }
 
 
