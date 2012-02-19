@@ -13,7 +13,7 @@ public class TorsRender extends Sprite {
 
     private var _torso:Torso;
 
-    public var attachedTorso:Sprite;
+    private var attachedTorso:Sprite;
     
     public function TorsRender(torso:Torso) {
         _torso = torso;
@@ -22,6 +22,7 @@ public class TorsRender extends Sprite {
         } else {
             attachedTorso = new bodyW();
         }
+        this.addChild(attachedTorso);
     }
 
 

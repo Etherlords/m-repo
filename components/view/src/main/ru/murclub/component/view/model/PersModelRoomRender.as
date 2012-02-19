@@ -17,6 +17,7 @@ public class PersModelRoomRender extends Sprite implements IPersModelRoomRender 
     [Inject]
     public var modelPM:ModelPM;
 
+    public var torsoRender:TorsRender;
 
     private var _userName:String;
 
@@ -31,6 +32,8 @@ public class PersModelRoomRender extends Sprite implements IPersModelRoomRender 
     [Init]
     public function init():void {
         userName = modelPM.name;
+        torsoRender = new TorsRender(modelPM.model.body.tors);
+        addChild(torsoRender);
     }
 
     public function get userName():String {
