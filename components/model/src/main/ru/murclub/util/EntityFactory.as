@@ -4,6 +4,7 @@
  */
 package ru.murclub.util {
 import ru.murclub.vo.body.Body;
+import ru.murclub.vo.body.Head;
 import ru.murclub.vo.body.Sex;
 import ru.murclub.vo.body.Torso;
 
@@ -15,6 +16,7 @@ public class EntityFactory {
         var body:Body = new Body();
         body.tors = new Torso();
         body.tors.sex = Sex.MALE;
+        body.head = new Head();
         return body;
     }
 }

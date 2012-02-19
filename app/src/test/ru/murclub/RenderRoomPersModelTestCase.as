@@ -20,6 +20,7 @@ import ru.murclub.component.view.config.PersRoomViewConfig;
 import ru.murclub.component.view.model.PersModelRoomRender;
 import ru.murclub.util.EntityFactory;
 import ru.murclub.vo.body.Body;
+import ru.murclub.vo.body.Head;
 import ru.murclub.vo.body.Sex;
 import ru.murclub.vo.body.Torso;
 import ru.murclub.vo.model.Model;
@@ -54,6 +55,7 @@ public class RenderRoomPersModelTestCase {
         var render:PersModelRoomRender = context.getObjectByType(PersModelRoomRender) as PersModelRoomRender;
         assertThat(render.torsoRender, notNullValue());
         assertThat(render.torsoRender.getChildAt(0), instanceOf(bodyM));
+        assertThat(render.headRender.getChildAt(0), instanceOf(HeadSymbol));
     }
 }
 }

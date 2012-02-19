@@ -6,7 +6,10 @@ package ru.murclub {
 import org.hamcrest.assertThat;
 import org.hamcrest.object.instanceOf;
 
+import ru.murclub.component.view.model.HeadRender;
+
 import ru.murclub.component.view.model.TorsRender;
+import ru.murclub.vo.body.Head;
 import ru.murclub.vo.body.Sex;
 import ru.murclub.vo.body.Torso;
 
@@ -30,6 +33,13 @@ public class BodyPartsRenderTestCase {
         torso.sex = Sex.FEMALE;
         var render:TorsRender = new TorsRender(torso);
         assertThat(render.getChildAt(0), instanceOf(bodyW));
+    }
+
+    [Test]
+    public function testRenderHead():void {
+        var head:Head = new Head();
+        var render:HeadRender = new HeadRender(head);
+        assertThat(render.getChildAt(0), instanceOf(HeadSymbol))
     }
 
 }
