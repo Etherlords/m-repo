@@ -16,9 +16,7 @@ public class Controller {
     }
 
     public function startup():void {
-        var model:Model = new Model();
-        model.id = 123;
-        model.body = EntityFactory.newEmptyMaleBody();
+        var model:Model =  EntityFactory.newEmptyMaleModel();
 
         md(MessageFactory.newAddModelMsg(model));
         md(MessageFactory.newAddModelToRoomMsg(model.id));

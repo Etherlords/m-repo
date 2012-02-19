@@ -38,8 +38,7 @@ public class RenderRoomPersModelTestCase {
     [Before]
     public function setUp():void {
 
-        model = new Model();
-        model.body = EntityFactory.newEmptyMaleBody();
+        model = EntityFactory.newEmptyMaleModel();
         
         ContextBuilder.newSetup().scope(PMConstaints.SCOPE_NAME_PERS_MODEL).newBuilder()
                 .config(FlexConfig.forClass(PersRoomViewConfig))
