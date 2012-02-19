@@ -39,11 +39,8 @@ public class RoomTestCase implements IRoomRenderService {
     [Inject]
     public var roomPM:RoomPM;
 
-    public var mockPersRender:MockRoomPersRender;
-
     [Before]
     public function setUp():void {
-
         ContextBuilder.newSetup().scope(PMConstaints.SCOPE_NAME_ROOM).newBuilder()
                 .config(FlexConfig.forClass(mockRoomPersRenderConfig))
                 .config(FlexConfig.forClass(pmConfig))
@@ -63,10 +60,9 @@ public class RoomTestCase implements IRoomRenderService {
         dispatcher(MessageFactory.newAddModelToRoomMsg(model.id));
         assertTrue(roomPM.userModelContextMap.hasKey(model.id));
         var modelPM:ModelPM = (roomPM.userModelContextMap.itemFor(model.id) as Context).getObjectByType(ModelPM) as ModelPM;
-        assertTrue(MockRoomPersRender(modelPM.modelRender).wasInited);
+
         assertThat(modelPM.model, model);
-        modelPM.name = "newname";
-        assertThat(MockRoomPersRender(modelPM.modelRender).userName, equalTo(model.name));
+
     }
 
     [MessageError]

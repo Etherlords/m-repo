@@ -6,6 +6,9 @@
  */
 package ru.murclub.vo.body {
 public class Torso {
+
+    public var sex:Sex;
+
     public function Torso() {
     }
 }
