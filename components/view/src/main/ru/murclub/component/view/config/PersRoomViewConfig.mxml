@@ -7,12 +7,14 @@
         import ru.murclub.component.pm.PMConstaints;
         import ru.murclub.component.view.model.PersModelRender;
         import ru.murclub.component.view.model.PersModelRender;
+
         ]]></fx:Script>
 
     <fx:Declarations>
         <DynamicObject type="{PersModelRender}">
+            <!--
             <Subscribe property="userName" scope="{PMConstaints.SCOPE_NAME_PERS_MODEL}"
-                       objectId="{PMConstaints.PUBLISH_PROPERTY_NAME}"/>
+                       objectId="{PMConstaints.PUBLISH_PROPERTY_NAME}"/>  -->
         </DynamicObject>
     </fx:Declarations>
 </Objects>

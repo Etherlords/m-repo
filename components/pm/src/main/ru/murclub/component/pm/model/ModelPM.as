@@ -41,5 +41,9 @@ public class ModelPM extends EventDispatcher {
         model.name = value;
         dispatchEvent(new Event(PMConstaints.EVENT_TYPE_CHANGE_NAME));
     }
+
+    public function get position():Number {
+        return model.position;
+    }
 }
 }

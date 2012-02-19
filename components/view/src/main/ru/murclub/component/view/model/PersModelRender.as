@@ -35,6 +35,7 @@ public class PersModelRender extends Sprite implements IPersModelRoomRender {
     [Init]
     public function init():void {
         userName = modelPM.name;
+        this.x = modelPM.position; //todo add set position test case for model pm
         torsoRender = new TorsRender(modelPM.model.body.tors);
         addChild(torsoRender);
         headRender = new HeadRender(modelPM.model.body.head);

@@ -38,7 +38,7 @@ public class RenderRoomPersModelTestCase {
     [Before]
     public function setUp():void {
 
-        model = EntityFactory.newEmptyMaleModel();
+        model = EntityFactory.newEmptyMaleModel(1);
         
         ContextBuilder.newSetup().scope(PMConstaints.SCOPE_NAME_PERS_MODEL).newBuilder()
                 .config(FlexConfig.forClass(PersRoomViewConfig))
@@ -51,10 +51,22 @@ public class RenderRoomPersModelTestCase {
 
     [Test]
     public function testRenderMan():void {
+        model.body.tors.sex = Sex.MALE;
         var render:PersModelRender = context.getObjectByType(PersModelRender) as PersModelRender;
         assertThat(render.torsoRender, notNullValue());
         assertThat(render.torsoRender.getChildAt(0), instanceOf(bodyM));
         assertThat(render.headRender.getChildAt(0), instanceOf(HeadSymbol));
     }
+    
+    [Test]
+    public function testRenderWoman():void {
+        model.body.tors.sex = Sex.FEMALE;
+        var render:PersModelRender = context.getObjectByType(PersModelRender) as PersModelRender;
+        
+        assertThat(render.torsoRender.getChildAt(0),  instanceOf(bodyW));
+        assertThat(render.torsoRender.getChildAt(1),  instanceOf(womenBodyShade));
+
+    }
+    
 }
 }

@@ -38,12 +38,12 @@ public class AddUserToRoomCommand {
         var model:Model = modelStorePM.getModel(msg.id);
         var modelContext:Context = ContextBuilder.newSetup()
                 .parent(context)
-                .scope(PMConstaints.SCOPE_NAME_PERS_MODEL)
+                //.scope(PMConstaints.SCOPE_NAME_PERS_MODEL, true)
                 .description("Context for model with id:" + model.id)
                 .newBuilder()
-                .object(model)
-                .config(FlexConfig.forClass(modelPMConfig))
-                .build();
+                    .object(model)
+                    .config(FlexConfig.forClass(modelPMConfig))
+                    .build();
         roomPM.registerUserModel(msg.id, modelContext);
     }
 }

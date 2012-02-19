@@ -4,10 +4,7 @@
 
     <fx:Script><![CDATA[
         import ru.murclub.controller.AddUserModelCommand;
-        import ru.murclub.controller.AddUserModelCommand;
-        import ru.murclub.controller.AddUserToRoomCommand;
         import ru.murclub.messages.AddModelMessage;
-        import ru.murclub.messages.AddModelToRoomMessage;
         ]]></fx:Script>
     <fx:Declarations>
         <MapCommand type="{AddUserModelCommand}" messageType="{AddModelMessage}"/>

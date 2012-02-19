@@ -45,6 +45,7 @@ class ContextBuilderHelper {
     public function build(root:DisplayObject):void {
         var rootContext:Context = ContextBuilder.newSetup()
                 .viewRoot(root)
+                .description("global root context")
                 .newBuilder()
                 .config(FlexConfig.forClass(pmConfig))
                 .config(FlexConfig.forClass(viewConfig))
@@ -55,6 +56,7 @@ class ContextBuilderHelper {
         
         var roomContext:Context = ContextBuilder.newSetup()
                                     .parent(rootContext)
+                                    .description("room context")
                                     .scope(PMConstaints.SCOPE_NAME_ROOM)
                                     .newBuilder()
                                         .config(FlexConfig.forClass(roomPMConfig))

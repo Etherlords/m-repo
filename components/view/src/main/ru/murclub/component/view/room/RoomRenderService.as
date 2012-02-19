@@ -43,7 +43,7 @@ public class RoomRenderService extends Sprite implements IRoomRenderService {
         addChild(_textField);
         _modelHolder = new Sprite();
         addChild(_modelHolder);
-        _modelHolder.y = 20;
+        _modelHolder.y = 150;
     }
 
     [Init]
@@ -55,7 +55,7 @@ public class RoomRenderService extends Sprite implements IRoomRenderService {
     public function register(modelPM:ModelPM):void {
         var renderContext:Context = ContextBuilder.newSetup()
                 .parent(modelPM.context)
-                .viewRoot(this)
+                .description("model render scope")
                 .newBuilder()
                     .config(FlexConfig.forClass(PersRoomViewConfig))
                     .build();

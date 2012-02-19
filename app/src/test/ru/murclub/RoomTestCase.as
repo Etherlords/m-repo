@@ -8,6 +8,7 @@ import org.flexunit.asserts.assertTrue;
 import org.flexunit.asserts.fail;
 import org.hamcrest.assertThat;
 import org.hamcrest.object.equalTo;
+import org.hamcrest.object.notNullValue;
 import org.spicefactory.parsley.context.ContextBuilder;
 import org.spicefactory.parsley.core.context.Context;
 import org.spicefactory.parsley.flex.FlexConfig;
@@ -27,6 +28,7 @@ import ru.murclub.mock.MockRoomPersRender;
 import ru.murclub.mock.mockRoomPersRenderConfig;
 import ru.murclub.service.render.IPersModelRoomRender;
 import ru.murclub.service.render.IRoomRenderService;
+import ru.murclub.util.EntityFactory;
 import ru.murclub.vo.model.Model;
 
 public class RoomTestCase implements IRoomRenderService {
@@ -62,6 +64,19 @@ public class RoomTestCase implements IRoomRenderService {
         var modelPM:ModelPM = (roomPM.userModelContextMap.itemFor(model.id) as Context).getObjectByType(ModelPM) as ModelPM;
 
         assertThat(modelPM.model, model);
+
+    }
+
+    [Test]
+    public function testAddTwoModel():void { //there is problem with scopes
+       modelStorePM.addModel(EntityFactory.newEmptyFemaleModel(1, 2));
+       modelStorePM.addModel(EntityFactory.newEmptyFemaleModel(2, 2));
+       dispatcher(MessageFactory.newAddModelToRoomMsg(1));
+       dispatcher(MessageFactory.newAddModelToRoomMsg(2));
+       var mode1PM1:ModelPM = (roomPM.userModelContextMap.itemFor(1) as Context).getObjectByType(ModelPM) as ModelPM;
+       var modelPM2:ModelPM = (roomPM.userModelContextMap.itemFor(2) as Context).getObjectByType(ModelPM) as ModelPM;
+       assertThat(mode1PM1, notNullValue());
+       assertThat(modelPM2, notNullValue());
 
     }
 

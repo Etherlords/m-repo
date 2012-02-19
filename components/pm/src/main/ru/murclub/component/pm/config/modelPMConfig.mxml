@@ -13,7 +13,9 @@
 
     <fx:Declarations>
         <Object type="{ModelPM}">
+            <!--
             <Publish scope="{PMConstaints.SCOPE_NAME_PERS_MODEL}" changeEvent="{PMConstaints.EVENT_TYPE_CHANGE_NAME}" objectId="{PMConstaints.PUBLISH_PROPERTY_NAME}" property="name"/>
+            -->
         </Object>
     </fx:Declarations>
 

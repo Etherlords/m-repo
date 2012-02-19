@@ -11,6 +11,7 @@ public class Model {
     public var name:String;
 
     public var body:Body;
+    public var position:Number;
 
     public function Model() {
     }

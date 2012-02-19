@@ -12,15 +12,22 @@ import ru.murclub.vo.body.Torso;
 public class TorsRender extends Sprite {
     private var _torso:Torso;
     private var attachedTorso:Sprite;
-    
+    private var bodyShade:Sprite;
+
     public function TorsRender(torso:Torso) {
         _torso = torso;
         if (_torso.sex == Sex.MALE) {
             attachedTorso = new bodyM();
         } else {
             attachedTorso = new bodyW();
+            bodyShade = new womenBodyShade();
         }
-        this.addChild(attachedTorso);
+
+        addChild(attachedTorso);
+
+        if (bodyShade != null) {
+            addChild(bodyShade);
+        }
     }
 
 

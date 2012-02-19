@@ -16,8 +16,11 @@ public class Controller {
     }
 
     public function startup():void {
-        var model:Model =  EntityFactory.newEmptyMaleModel();
+        addModel(EntityFactory.newEmptyMaleModel(1, 100));
+        addModel(EntityFactory.newEmptyFemaleModel(2, 200))
+    }
 
+    private function addModel(model:Model):void {
         md(MessageFactory.newAddModelMsg(model));
         md(MessageFactory.newAddModelToRoomMsg(model.id));
     }
