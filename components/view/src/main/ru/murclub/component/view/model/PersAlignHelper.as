@@ -4,7 +4,16 @@
  */
 package ru.murclub.component.view.model {
 public class PersAlignHelper {
+
+    public var _persRender:PersModelRender;
+
     public function PersAlignHelper(persRender:PersModelRender) {
+       _persRender = persRender;
+    }
+
+    public function doAlign():void {
+        _persRender.headRender.y = -_persRender.headRender.height;
+        _persRender.headRender.x = _persRender.torsoRender.width/2 - _persRender.headRender.width/2;
     }
 }
 }

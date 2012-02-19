@@ -24,6 +24,8 @@ public class PersModelRender extends Sprite implements IPersModelRoomRender {
 
     private var _textField:TextField = new TextField();
 
+    private var _alignHelper:PersAlignHelper;
+
     public function PersModelRender() {
 
         _textField.text = "model";
@@ -37,6 +39,12 @@ public class PersModelRender extends Sprite implements IPersModelRoomRender {
         addChild(torsoRender);
         headRender = new HeadRender(modelPM.model.body.head);
         addChild(headRender);
+        _alignHelper = new PersAlignHelper(this);
+        doAlign();
+    }
+
+    public function doAlign():void {
+        _alignHelper.doAlign();
     }
 
     public function get userName():String {
