@@ -21,6 +21,17 @@ public class PersAlignTest {
         assertThat(Math.round(persRender.headRender.x), equalTo(Math.round(persRender.torsoRender.width/2 - persRender.headRender.width/2)));
         assertThat(persRender.headRender.y, equalTo(-persRender.headRender.height));
         assertThat(persRender.torsoRender.y, equalTo(0));
+
+    }
+
+    [Test]
+    public function testFemaleAlign():void {
+        var persRender:PersModelRender = new PersModelRender();
+        persRender.modelPM = new ModelPM();
+        persRender.modelPM.model = EntityFactory.newEmptyMaleModel(1, 1);
+        persRender.init();
+        assertThat(persRender.emoutionRender.x, equalTo(persRender.headRender.x));
+        assertThat(persRender.emoutionRender.y, equalTo(persRender.headRender.y));
     }
 
 }

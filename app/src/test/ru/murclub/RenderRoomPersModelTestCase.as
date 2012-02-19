@@ -56,6 +56,8 @@ public class RenderRoomPersModelTestCase {
         assertThat(render.torsoRender, notNullValue());
         assertThat(render.torsoRender.getChildAt(0), instanceOf(bodyM));
         assertThat(render.headRender.getChildAt(0), instanceOf(HeadSymbol));
+        assertThat(render.emoutionRender, notNullValue());
+        assertThat(render.emoutionRender.getChildAt(0), instanceOf(emoM));
     }
     
     [Test]
@@ -64,6 +66,7 @@ public class RenderRoomPersModelTestCase {
         var render:PersModelRender = context.getObjectByType(PersModelRender) as PersModelRender;
         
         assertThat(render.torsoRender.getChildAt(0),  instanceOf(bodyW));
+        assertThat(render.emoutionRender.getChildAt(0), instanceOf(emoW));
     }
     
 }

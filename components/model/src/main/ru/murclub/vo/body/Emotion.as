@@ -1,12 +1,12 @@
-/**
- * Created by Denis Rykovanov mailto:denis.rykovanov@gmail.com
- * User: DES
- * Date: 16.02.12
- * Time: 8:14
- */
+
 package ru.murclub.vo.body {
 public class Emotion {
-    public function Emotion() {
+
+    public var emoutionNum:Number;
+
+    public function Emotion(num:Number) {
+        this.emoutionNum = num;
+
     }
 }
 }

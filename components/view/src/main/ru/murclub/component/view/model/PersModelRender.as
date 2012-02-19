@@ -26,6 +26,8 @@ public class PersModelRender extends Sprite implements IPersModelRoomRender {
 
     private var _alignHelper:PersAlignHelper;
 
+    public var emoutionRender:EmotionRender;
+
     public function PersModelRender() {
 
         _textField.text = "model";
@@ -40,7 +42,10 @@ public class PersModelRender extends Sprite implements IPersModelRoomRender {
         addChild(torsoRender);
         headRender = new HeadRender(modelPM.model.body.head);
         addChild(headRender);
+        emoutionRender = new EmotionRender(modelPM.model.body);
+        addChild(emoutionRender);
         _alignHelper = new PersAlignHelper(this);
+
         doAlign();
     }
 
