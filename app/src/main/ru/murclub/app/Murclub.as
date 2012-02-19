@@ -5,7 +5,7 @@ import flash.text.TextField;
 
 import org.spicefactory.parsley.core.context.Context;
 
-import ru.murclub.component.view.model.PersModelRoomRender;
+import ru.murclub.component.view.model.PersModelRender;
 import ru.murclub.vo.model.Model;
 
 public class Murclub extends Sprite {

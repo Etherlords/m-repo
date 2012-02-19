@@ -12,7 +12,7 @@ import ru.murclub.component.pm.model.ModelPM;
 import ru.murclub.service.render.IPersModelRender;
 import ru.murclub.service.render.IPersModelRoomRender;
 
-public class PersModelRoomRender extends Sprite implements IPersModelRoomRender {
+public class PersModelRender extends Sprite implements IPersModelRoomRender {
 
     [Inject]
     public var modelPM:ModelPM;
@@ -24,7 +24,7 @@ public class PersModelRoomRender extends Sprite implements IPersModelRoomRender 
 
     private var _textField:TextField = new TextField();
 
-    public function PersModelRoomRender() {
+    public function PersModelRender() {
 
         _textField.text = "model";
         addChild(_textField);

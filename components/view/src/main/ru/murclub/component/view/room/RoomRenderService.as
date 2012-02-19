@@ -20,7 +20,7 @@ import ru.murclub.component.pm.model.ModelPM;
 import ru.murclub.component.view.config.PersRoomViewConfig;
 import ru.murclub.component.view.config.roomViewConfig;
 
-import ru.murclub.component.view.model.PersModelRoomRender;
+import ru.murclub.component.view.model.PersModelRender;
 
 import ru.murclub.service.render.IPersModelRoomRender;
 
@@ -59,7 +59,7 @@ public class RoomRenderService extends Sprite implements IRoomRenderService {
                 .newBuilder()
                     .config(FlexConfig.forClass(PersRoomViewConfig))
                     .build();
-        var render:PersModelRoomRender = renderContext.getObjectByType(PersModelRoomRender) as PersModelRoomRender;
+        var render:PersModelRender = renderContext.getObjectByType(PersModelRender) as PersModelRender;
         _modelHolder.addChild(render)
     }
 

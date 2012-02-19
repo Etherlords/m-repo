@@ -8,7 +8,7 @@
 
         import ru.murclub.component.pm.PMConstaints;
         import ru.murclub.component.view.ViewConstants;
-        import ru.murclub.component.view.model.PersModelRoomRender;
+        import ru.murclub.component.view.model.PersModelRender;
         import ru.murclub.component.view.room.RoomRenderService;
         ]]>
     </fx:Script>
