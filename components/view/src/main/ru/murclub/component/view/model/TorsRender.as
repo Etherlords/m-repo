@@ -10,9 +10,7 @@ import ru.murclub.vo.body.Sex;
 import ru.murclub.vo.body.Torso;
 
 public class TorsRender extends Sprite {
-
     private var _torso:Torso;
-
     private var attachedTorso:Sprite;
     
     public function TorsRender(torso:Torso) {

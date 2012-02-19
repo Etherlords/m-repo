@@ -29,7 +29,7 @@ public class TorsRenderTestCase {
         var torso:Torso = new Torso();
         torso.sex = Sex.MALE;
         var render:TorsRender = new TorsRender(torso);
-        assertThat(render.attachedTorso, instanceOf(bodyM));
+        assertThat(render.getChildAt(0), instanceOf(bodyM));
     }
 
     [Test]
@@ -37,7 +37,7 @@ public class TorsRenderTestCase {
         var torso:Torso = new Torso();
         torso.sex = Sex.FEMALE;
         var render:TorsRender = new TorsRender(torso);
-        assertThat(render.attachedTorso, instanceOf(bodyW));
+        assertThat(render.getChildAt(0), instanceOf(bodyW));
     }
 
 }
